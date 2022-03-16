@@ -4,8 +4,6 @@ using PixooSharp;
 using PixooSharp.Assets;
 
 var pixoo = new Pixoo64("172.24.1.241", 64, true);
-//await pixoo.SendClearTextAsync();
-//await pixoo.SendTextAsync(0, 0, Direction.RIGHT, "[ERROR] - Failed to fix the thing with the other thing", Palette.Red, 2);
 pixoo.DrawLine(0, 0, 31, 0, Palette.White);
 pixoo.DrawLine(31, 0, 31, 31, Palette.White);
 pixoo.DrawLine(31, 31, 0, 31, Palette.White);
