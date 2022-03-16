@@ -40,12 +40,7 @@ namespace PixooSharp
 
         public void Clear()
         {
-            Clear(Palette.Black);
-        }
-
-        public void Clear(Rgb colour)
-        {
-            Fill(colour);
+            Fill(Palette.Black);
         }
 
         public void Fill(Rgb fillColour)
