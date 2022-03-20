@@ -17,11 +17,12 @@ namespace PixooSharp
 
         private Rgb[] _buffer;
 
-        public Pixoo64(string address, int size, bool debug = false)
+        public Pixoo64(string address, int size, bool debug = false, int pushCount = 50)
         {
             _url = string.Format("http://{0}/post", address);
             _debug = debug;
             _screenSize = size;
+            _pushCount = pushCount;
             switch (size)
             {
                 case 16:
@@ -176,7 +177,7 @@ namespace PixooSharp
             }
         }
 
-        public async Task SendBufferAsync()
+        public async Task SendBufferAsync(int frameId)
         {
             // generate pixoo format image
             Byte[] sendBuffer = new byte[_pixelCount*3];
@@ -196,7 +197,7 @@ namespace PixooSharp
                 Console.WriteLine();
             }
             string base64String = Convert.ToBase64String(sendBuffer, 0, sendBuffer.Length);
-            var command = new SendBufferCommand(_screenSize, _pushCount, base64String);
+            var command = new SendBufferCommand(_screenSize, frameId, base64String);
             var jsonString = JsonSerializer.Serialize(command);
             await SendCommandAsync(jsonString);
         }
@@ -218,6 +219,13 @@ namespace PixooSharp
         public async Task SendNoise(bool sounding)
         {
             var command = new SendNoiseCommand(sounding);
+            var jsonCommand = JsonSerializer.Serialize(command);
+            await SendCommandAsync(jsonCommand);
+        }
+
+        public async Task SendResetGif()
+        {
+            var command = new SendResetGifCommand();
             var jsonCommand = JsonSerializer.Serialize(command);
             await SendCommandAsync(jsonCommand);
         }
