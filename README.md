@@ -56,12 +56,18 @@ pixoo.DrawText(x, y, Rgb colour, "{Your Text}");
 pixoo.DrawPixel(x, y, Rgb colour);
 ```
 
+### SendResetGif
+This will reset an animated GIF so that all frame ids are now usable again.
+```c#
+pixoo.SendResetGif();
+```
+
 ### SendBufferAsync
 This will need to be prefixed by the await command.
 
-This sends the current canvas to the Pixoo64 device.
+This sends the current canvas to the Pixoo64 device with a specified frame number.
 ```c#
-await pixoo.SendBufferAsync();
+await pixoo.SendBufferAsync(frameNumber);
 ```
 
 ### SendTextAsync
@@ -90,7 +96,10 @@ pixoo.DrawLine(31, 31, 0, 31, Palette.White);
 pixoo.DrawLine(0, 31, 0, 0, Palette.White);
 pixoo.DrawText(0, 34, Palette.Green, "Hello World!");
 pixoo.DrawFilledRectangle(10, 10, 20, 20, Palette.Red);
-await pixoo.SendBufferAsync();
+// We are not creating a gif to animate so reset to make sure the image Id will work
+await pixoo.SendResetGif();
+// We now specify the frame Id as part of the SendBuffer
+await pixoo.SendBufferAsync(0);
 await pixoo.SendTextAsync(0, 0, Direction.RIGHT, "This is a message that scrolls across the screen. I hope it works!", Palette.White);
 Thread.Sleep(20000);
 await pixoo.SendClearTextAsync();
