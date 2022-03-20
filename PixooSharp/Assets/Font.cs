@@ -11,17 +11,17 @@
                 new FontCharacter()
                 {
                     Character = '1',
-                    Data = new byte[] { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1 }
-                },
-                new FontCharacter()
-                {
-                    Character = '2',
                     Data = new byte[] {1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1}
                 },
                 new FontCharacter()
                 {
+                    Character = '2',
+                    Data = new byte[] {1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1}
+                },
+                new FontCharacter()
+                {
                     Character = '3',
-                    Data = new byte[] { 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1 }
+                    Data = new byte[] {1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1}
                 },
                 new FontCharacter()
                 {
