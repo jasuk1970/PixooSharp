@@ -13,6 +13,11 @@ This library allows you to draw on a 64x64 canvas, then allows you to push that 
 var pixoo = new Pixoo64("{Your Pixoo64 IP Address}", PixooSize.P64, true);
 ```
 
+## New ImageFrame
+```c#
+var imageFrame = new ImageFrame(PixooSize.Pix64);
+```
+
 ### Palette
 This is a helper for some common colours, currently
 Red, Black, White, Green, Yellow, Blue
@@ -21,36 +26,40 @@ This can be used anywhere that Rrb is used below.
 
 ### DrawLine
 ```c#
-pixoo.DrawLine(startX, startY, endX, endY, Rgb colour);
+imageFrame.DrawLine(startX, startY, endX, endY, Rgb colour);
 ```
 
 ### Clear
 This will fill the canvas with black.
 ```c#
-pixoo.Clear();
+imageFrame.Clear();
 ```
 
 ### Fill
 This will fill the screen with a selected colour.
 ```c#
-pixoo.Fill(Rgb colour)
+imageFrame.Fill(Rgb colour)
 ```
 
 ### DrawFilledRectangle
 This will draw a solid rectangle on the canvas
 ```c#
-pixoo.DrawFilledRectangle(topX, topY, bottomX, bottomY, Rgb colour);
+imageFrame.DrawFilledRectangle(topX, topY, bottomX, bottomY, Rgb colour);
 ```
 
 ### DrawText
 This will draw text on the canvas using the PICO8 3x5 font.
 ```c#
-pixoo.DrawText(x, y, Rgb colour, "{Your Text}");
+imageFrame.DrawText(x, y, Rgb colour, "{Your Text}");
 ```
 
 ### DrawPixel
 ```c#
-pixoo.DrawPixel(x, y, Rgb colour);
+imageFrame.DrawPixel(x, y, Rgb colour);
+```
+### Submit the image to the Pixoo
+```c#
+wait pixoo.SendBufferAsync(1, imageFrame, 0, 1, 0);
 ```
 
 ### SendResetGif
@@ -85,6 +94,7 @@ await pixoo.SendClearTextAsync();
 ```
 
 ## Example usages
+```c#
 using PixooSharp;
 using PixooSharp.Assets;
 
@@ -178,6 +188,7 @@ await pixoo.SendResetGif();
 
 // Jump back to my favorite clock (the one that rotates through other clocks)
 await pixoo.SelectClock(3); // back to my favorite clock
+```
 
 ## Special Thanks
 Special thanks go to [SomethingWithComputers](https://github.com/SomethingWithComputers/pixoo) the creator of a Pixoo Python library which I have used as the basis to create this .net version.
