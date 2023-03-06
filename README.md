@@ -1,4 +1,10 @@
 # PixooSharp
+
+Art source
+https://opengameart.org/
+https://opengameart.org/content/golden-ui
+https://opengameart.org/content/10-fantasy-rpg-enemies
+
 I've been looking to find a way of talking to the Pixoo API in .net but didn't find anything usable so I thought I'd have a go at putting one together myself. I took inspiration from a python library to get me going. (See special thanks below).
 
 The project is in its early stages and may have a few bugs.
