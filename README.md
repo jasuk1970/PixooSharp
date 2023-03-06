@@ -98,7 +98,7 @@ await pixoo.SendClearTextAsync();
 using PixooSharp;
 using PixooSharp.Assets;
 
-var pixoo = new Pixoo64("pixoo", true);
+var pixoo = new Pixoo64({Your Pixoo64 IP Address}, true);
 
 /*
  * 
