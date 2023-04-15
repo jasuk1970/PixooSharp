@@ -10,11 +10,14 @@
         public int PicSpeed { get; set; } = 1000;
         public string PicData { get; set; }
 
-        public SendBufferCommand(int picWidth, int frameId, string picData)
+        public SendBufferCommand(int picWidth, int picID, int frameId, int frameCount, int speed, string picData)
         {
+            PicNum = frameCount;
             PicWidth = picWidth;
-            PicID = frameId;
+            PicID = picID;
+            PicOffset = frameId;
             PicData = picData;
+            PicSpeed = speed;
         }
 
     }

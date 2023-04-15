@@ -8,6 +8,7 @@
         public static Rgb Red { get; set; } = new Rgb() { Red = 255, Green = 0, Blue = 0 };
         public static Rgb Green { get; set; } = new Rgb() { Green = 255, Red = 0, Blue = 0 };
         public static Rgb Yellow { get; set; } = new Rgb() { Red = 255, Green= 255, Blue = 0 };
-      
+        public static Rgb Blue { get; set; } = new Rgb() { Red = 0, Green = 0, Blue = 255 };
+
     }
 }
