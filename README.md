@@ -187,10 +187,12 @@ await pixoo.SelectClock(3); // back to my favorite clock
 
 ## Special Thanks
 Special thanks go to [SomethingWithComputers](https://github.com/SomethingWithComputers/pixoo) the creator of a Pixoo Python library which I have used as the basis to create this .net version.
+
 Also special thanks go to the creator of the [PICO8](https://www.lexaloffle.com/pico-8.php) 3x5 font which I have used (Converted from SomethingWithComputers project)
+
 Also special thanks go to @loslupo Who added some features and make the 'picture' more of an managable object.
 
 Art sources
-https://opengameart.org/
-https://opengameart.org/content/golden-ui
-https://opengameart.org/content/10-fantasy-rpg-enemies
+* https://opengameart.org/
+* https://opengameart.org/content/golden-ui
+* https://opengameart.org/content/10-fantasy-rpg-enemies
