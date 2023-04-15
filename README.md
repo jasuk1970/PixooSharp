@@ -1,10 +1,5 @@
 # PixooSharp
 
-This is a fork of https://github.com/jasuk1970/PixooSharp
-Which is a nice setup for an usable API Interface.
-
-I added some features and make the 'picture' more of an managable object.
-
 ## Usage
 This library allows you to draw on a 64x64 canvas, then allows you to push that canvas to the Pixoo64 device.
 
@@ -193,9 +188,7 @@ await pixoo.SelectClock(3); // back to my favorite clock
 ## Special Thanks
 Special thanks go to [SomethingWithComputers](https://github.com/SomethingWithComputers/pixoo) the creator of a Pixoo Python library which I have used as the basis to create this .net version.
 Also special thanks go to the creator of the [PICO8](https://www.lexaloffle.com/pico-8.php) 3x5 font which I have used (Converted from SomethingWithComputers project)
-
-
-And also Special Thanks to [jasuk1970](https://github.com/jasuk1970/PixooSharp)
+Also special thanks go to @loslupo Who added some features and make the 'picture' more of an managable object.
 
 Art sources
 https://opengameart.org/
